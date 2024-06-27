@@ -52,8 +52,8 @@ def main():
     keyhash = hashbuilder(rand, privkey, pubkey)
 
     ## call the API with marvelcharcall(timestamp, hash, publickey, character)
-    result = marvelcharcall(rand, keyhash, pubkey, args.hero)
-
+   # result = marvelcharcall(rand, keyhash, pubkey, args.hero)
+    result = marvelcharcall(rand, keyhash, pubkey, args.story)
     ## display results
     pprint(result)
 
@@ -66,6 +66,10 @@ if __name__ == '__main__':
 
     ## This allows us to pass the lookup character
     parser.add_argument('--hero', help='Character to search for within the Marvel universe')
+    args = parser.parse_args()
+
+    ## This allows us to pass the lookup character
+    parser.add_argument('--story', help='Character to search for within the Marvel universe')
     args = parser.parse_args()
     main()
 
